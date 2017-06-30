@@ -1,19 +1,13 @@
 {
-  "name": "ghvz",
-  "description": "Google Humans vs Zombies",
+  "name": "PlayHvZ",
+  "description": "Humans vs Zombies Site",
   "main": "index.html",
   "authors": [
-    "Aleks Rozman <aleks.rozman@gmail.com>"
+    "Evan Ovadia",
+    "Chewy Shaw"
   ],
-  "license": "MIT",
-  "homepage": "https://github.com/stealthflyer/playhvz",
-  "ignore": [
-    "**/.*",
-    "node_modules",
-    "bower_components",
-    "test",
-    "tests"
-  ],
+  "license": "",
+  "homepage": "https://github.com/google/playhvz",
   "dependencies": {
     "iron-a11y-keys": "^1.0.7",
     "iron-flex-layout": "^1.3.2",
