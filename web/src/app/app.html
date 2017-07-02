@@ -71,7 +71,7 @@
 
         isAdmin: {
           type: Boolean,
-          computed: 'computeIsAdmin_(user, game, game.admins.length)',
+          computed: 'computeIsAdmin_(user, game, game.adminUsers.length)',
         },
 
         showSignInButton: {
@@ -93,7 +93,7 @@
         'navigateEmptyPathToGamesPath_(path)',
         'autoChooseGameToPutIntoPath_(path, database.games.length, user.publicPlayers.length)',
         'loadGameInPath_(path, userId, gameId, database.games.length, user.publicPlayers.length)',
-        'listenToGame_(game, game.admins.length, playerId)',
+        'listenToGame_(game, game.adminUsers.length, playerId)',
         'selectPlayer_(user, game, user.publicPlayers.length)',
         'navigateGameToDashboard_(path)',
       ],
@@ -225,7 +225,7 @@
         if (this.listeningToGame) {
           return;
         }
-        let isAdmin = !!this.game.admins.find(admin => admin.userId == this.userId);
+        let isAdmin = !!this.game.adminUsers.find(admin => admin.userId == this.userId);
         if (isAdmin) {
           this.listeningToGame = true;
           this.bridge.listenToGameAsAdmin({gameId: this.gameId});
@@ -252,7 +252,7 @@
       },
 
       computeIsAdmin_: function(user) {
-        let admin = this.game.admins.find((admin) => admin.userId == user.id);
+        let admin = this.game.adminUsers.find((admin) => admin.userId == user.id);
         return !!admin;
       },
 

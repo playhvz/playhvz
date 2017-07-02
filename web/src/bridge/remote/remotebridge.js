@@ -124,11 +124,11 @@ class RemoteBridge {
   }
 
   listenToGameAsAdmin(gameId) {
-    this.firebaseListener.listenToGameAsAdmin(gameId);
+    return this.firebaseListener.listenToGameAsAdmin(gameId);
   }
 
   listenToGameAsPlayer(gameId, playerId) {
-    this.firebaseListener.listenToGameAsPlayer(gameId, playerId);
+    return this.firebaseListener.listenToGameAsPlayer(gameId, playerId);
   }
 
   register(args) {
